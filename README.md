@@ -2,5 +2,9 @@ Kieschnick Consulting
 ---------------------
 
 Deployment:
-```sh ./deploy.sh <aws-access-key-id> <aws-secret>```
+```npm run deploy```
 
+ensure you have set aws credential env variables:
+
+AWS_ACCESS_KEY_ID
+AWS_SECRET_ACCESS_KEY
