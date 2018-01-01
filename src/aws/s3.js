@@ -1,7 +1,7 @@
-// Import the Amazon S3 service client
+'use strict';
+
 const S3 = require('aws-sdk/clients/s3');
  
-// Set credentials and region
 const s3 = new S3({
   apiVersion: '2006-03-01',
   region: 'us-east-2'
@@ -10,10 +10,11 @@ const s3 = new S3({
 module.exports = {
   upload: html => {
     return new Promise((resolve, reject) => {
+      const buildName = `build_${Date.now()}`;
       const params = {
         Body: Buffer.from(html, 'utf8'), 
         Bucket: "kieschnickconsulting.com", 
-        Key: `build_${Date.now()}/example.html`, 
+        Key: `${buildName}/example.html`, 
         ServerSideEncryption: "AES256"
       };
 
@@ -21,7 +22,7 @@ module.exports = {
         if (err) {
           reject(err);
         } else {
-          resolve();
+          resolve(buildName);
         }
       });
     });

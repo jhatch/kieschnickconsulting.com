@@ -14,7 +14,7 @@ const cloudFront = require("./src/aws/cloudFront");
 exports.handler = (event, context, callback) => {
   contentful.getContent("published")
     .then(content => site.generate(content))
-    .then(html => s3.upload(html));
-    // .then(buildName => cloudFront.updateOriginPath(buildName))
-    // .then(() => cloudFront.invalidateCache());
+    .then(html => s3.upload(html))
+    .then(buildName => cloudFront.updateOriginPath(buildName))
+    .then(() => cloudFront.invalidateCache());
 };
