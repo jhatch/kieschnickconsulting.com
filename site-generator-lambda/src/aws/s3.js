@@ -8,9 +8,8 @@ const s3 = new S3({
 });
 
 module.exports = {
-  upload: html => {
+  upload: (buildName, html) => {
     return new Promise((resolve, reject) => {
-      const buildName = `build_${Date.now()}`;
       const params = {
         Body: Buffer.from(html, 'utf8'), 
         Bucket: 'kieschnickconsulting.com', 

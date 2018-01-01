@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  generate: content => Promise.resolve(`
+  generate: buildName => Promise.resolve(`
     <!DOCTYPE html>
     <html>
     <head>
@@ -9,10 +9,8 @@ module.exports = {
     </head>
     <body>
       <h1>Latest published content:</h1>
-      <pre>${Date.now()}</pre>
+      <pre>${buildName}</pre>
     </body>
     </html>
   `)
 };
-
-// JSON.stringify(content, null, 2)

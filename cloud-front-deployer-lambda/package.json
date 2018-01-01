@@ -1,0 +1,23 @@
+{
+  "name": "kieschnickconsulting.com",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "sh ./deploy.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhatch/kieschnickconsulting.com.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jhatch/kieschnickconsulting.com/issues"
+  },
+  "homepage": "https://github.com/jhatch/kieschnickconsulting.com#readme",
+  "dependencies": {
+    "aws-sdk": "2.176.x"
+  }
+}
