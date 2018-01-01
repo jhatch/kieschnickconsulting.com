@@ -3,7 +3,7 @@ set -e
 functionName=KieschnickConsultingSiteGenerator
 artifact="${functionName}_$(date +%Y%m%d-%H%M%S).zip"
 
-echo "Uploading code to [lambda] $functionName"
+echo "Uploading code to [lambda] ${functionName}..."
 
 zip -rq $artifact ./*
 export AWS_DEFAULT_REGION=us-east-2

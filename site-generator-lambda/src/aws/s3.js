@@ -14,7 +14,7 @@ module.exports = {
       const params = {
         Body: Buffer.from(html, 'utf8'), 
         Bucket: 'kieschnickconsulting.com', 
-        Key: `${buildName}/example.html`, 
+        Key: `${buildName}/index.html`, 
         ContentType: 'text/html'
       };
 

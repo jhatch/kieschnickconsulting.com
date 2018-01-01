@@ -25,7 +25,9 @@ module.exports = {
           if (err) {
             reject(err);
           } else {
-            resolve();
+            setTimeout(() => {
+              resolve();
+            }, 30000);
           }
         });
       });

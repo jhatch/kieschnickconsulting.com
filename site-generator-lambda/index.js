@@ -10,7 +10,6 @@ const cloudFront = require("./src/aws/cloudFront");
  *   - add email notification on failure/success
  *   - parameterize published vs preview + dev vs stag vs prod cloudfronts
 */
-
 exports.handler = (event, context, callback) => {
   contentful.getContent("published")
     .then(content => site.generate(content))
