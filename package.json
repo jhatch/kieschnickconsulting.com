@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/jhatch/kieschnickconsulting.com#readme",
   "dependencies": {
-    "aws-sdk": "2.176.0",
-    "request": "2.83.0"
+    "aws-sdk": "2.176.x",
+    "contentful": "^5.0.5"
   }
 }
