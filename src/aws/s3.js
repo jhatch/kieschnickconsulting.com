@@ -13,9 +13,9 @@ module.exports = {
       const buildName = `build_${Date.now()}`;
       const params = {
         Body: Buffer.from(html, 'utf8'), 
-        Bucket: "kieschnickconsulting.com", 
+        Bucket: 'kieschnickconsulting.com', 
         Key: `${buildName}/example.html`, 
-        ServerSideEncryption: "AES256"
+        ContentType: 'text/html'
       };
 
       s3.putObject(params, (err, data) => {
