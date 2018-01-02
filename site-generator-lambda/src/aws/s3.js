@@ -4,7 +4,7 @@ const S3 = require('aws-sdk/clients/s3');
  
 const s3 = new S3({
   apiVersion: '2006-03-01',
-  region: 'us-east-2'
+  region: process.env.AWS_REGION
 });
 
 module.exports = {
@@ -12,7 +12,7 @@ module.exports = {
     return new Promise((resolve, reject) => {
       const params = {
         Body: Buffer.from(html, 'utf8'), 
-        Bucket: 'kieschnickconsulting.com', 
+        Bucket: process.env.S3_BUCKET, 
         Key: `${buildName}/index.html`, 
         ContentType: 'text/html'
       };

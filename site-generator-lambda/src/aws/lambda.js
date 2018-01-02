@@ -4,7 +4,7 @@ const Lambda = require('aws-sdk/clients/lambda');
  
 const lambda = new Lambda({
   apiVersion: '2015-03-31',
-  region: 'us-east-2'
+  region: process.env.AWS_REGION
 });
 
 module.exports = {
@@ -12,8 +12,8 @@ module.exports = {
     return new Promise((resolve, reject) => {
       lambda.invoke({
         InvocationType: 'Event',
-        FunctionName: 'CloudFrontDeployer',
-        Payload: JSON.stringify({ env: env, buildName: buildName })
+        FunctionName: process.env.DOWNSTREAM_LAMBDA_FUNCTION,
+        Payload: JSON.stringify({ env, buildName })
       }, err => {
         if (err) {
           reject(err);

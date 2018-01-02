@@ -1,15 +1,46 @@
 'use strict';
 
 const contentful = require('contentful')
-const client = contentful.createClient({
-  space: 'l6kwo5y17oth',
-
-  // TODO: we can't just hardcode this here...also invoke this key and make a new one
-  accessToken: '38c295252cdb39fd30de25c452d2a85858afe31cc46342bf6db1ce705281d9bb'
-});
+const kms = require('./aws/kms');
 
 module.exports = {
-  getContent: () => {
-    return client.getEntries();
+  getContent: content => {
+    let rProm;
+
+    switch (content) {
+      case 'preview':
+        rProm = kms.decrypt(process.env.CONTENTFUL_PREVIEW_API_KEY)
+          .then(apiKey => {
+            const client = contentful.createClient({
+              space: process.env.CONTENTFUL_SPACE_ID,
+              accessToken: apiKey,
+              host: process.env.CONTENTFUL_PREVIEW_HOST
+            });
+
+            return client.getEntry('5otYFWLq6cCUOaCiCuuqci');
+          });
+
+        break;
+
+      case 'publish':
+        rProm = kms.decrypt(process.env.CONTENTFUL_PUBLISH_API_KEY)
+          .then(apiKey => {
+            const client = contentful.createClient({
+              space: process.env.CONTENTFUL_SPACE_ID,
+              accessToken: apiKey,
+              host: process.env.CONTENTFUL_PUBLISHHOST
+            });
+
+            return client.getEntry('5otYFWLq6cCUOaCiCuuqci');
+          });
+
+        break;
+
+      default:
+        break;
+
+    }
+
+    return rProm;
   }
 };

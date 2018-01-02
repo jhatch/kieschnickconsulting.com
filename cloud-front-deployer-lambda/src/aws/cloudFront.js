@@ -50,7 +50,7 @@ module.exports = {
           } else {
             setTimeout(() => {
               resolve();
-            }, 30000); // HACK: let the dist propagate
+            }, 1000); // HACK: let the dist propagate
             // TODO: poll for dist state instead of using this
           }
         });
