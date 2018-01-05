@@ -9,6 +9,8 @@ const Quote = () => (<span />);
 const HomePage = () => (
   <div>
 
+    <h1>Home</h1>
+
     <DisplayImage 
       src={PeggyKieschnick1} 
       label='Peggy Kieschnick, MSW, ACSW'
