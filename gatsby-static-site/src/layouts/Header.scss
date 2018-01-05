@@ -1,16 +1,30 @@
 header {
-  margin: 30px;
+  width: 100%;
+  margin-top: 0px;
   color: #2c338c;
   font-family: 'Vollkorn', serif;
 
-  .main-title {
-    font-size: 48px;
-    text-transform: uppercase;
-    text-decoration: none;
-    
-    &:active {
+  .title-section {
+    padding: 40px 0 20px;
+    width: 1040px;
+    margin: 0 auto;
+
+    .main-title {
+      font-size: 48px;
+      text-transform: uppercase;
       text-decoration: none;
+      
+      &:active {
+        text-decoration: none;
+      }
     }
+  }
+
+  .menu-section {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    padding-left: 80px;
+    background: linear-gradient(#34678a, #143f4c);
   }
 
   description {

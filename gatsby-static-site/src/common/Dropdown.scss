@@ -1,0 +1,21 @@
+ul.dropdown {
+  display: none;
+  padding: 20px;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+
+  li {
+    font-size: 14px;
+    line-height: 21px;
+    list-style: none;
+
+    a {
+      border-bottom: solid black 1px;
+      text-decoration: none;
+      color: #747474;
+
+      &:hover {
+        color: #f47529;
+      }
+    }
+  }
+}

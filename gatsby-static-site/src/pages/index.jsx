@@ -16,7 +16,7 @@ const HomePage = () => (
       attrlink='ClearEyePhoto.com'
     />
 
-    <Quote />
+{/*    <Quote />
     
     <ul>
       <li><ReadMore /></li>
@@ -25,7 +25,7 @@ const HomePage = () => (
       <li><ReadMore /></li>
     </ul>
 
-    <Quote />
+    <Quote />*/}
   </div>
 )
 
