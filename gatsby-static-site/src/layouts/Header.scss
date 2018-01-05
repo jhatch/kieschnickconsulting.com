@@ -1,0 +1,20 @@
+header {
+  margin: 30px;
+  color: #2c338c;
+  font-family: 'Vollkorn', serif;
+
+  .main-title {
+    font-size: 48px;
+    text-transform: uppercase;
+    text-decoration: none;
+    
+    &:active {
+      text-decoration: none;
+    }
+  }
+
+  description {
+    display: block;
+    font-size: 13px;
+  }
+}

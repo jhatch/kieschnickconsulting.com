@@ -1,0 +1,25 @@
+{
+  "name": "gatsby-starter-default",
+  "description": "Gatsby default starter",
+  "version": "1.0.0",
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "dependencies": {
+    "gatsby": "^1.9.145",
+    "gatsby-link": "^1.6.32",
+    "gatsby-plugin-google-analytics": "^1.0.15",
+    "gatsby-plugin-postcss-sass": "^1.0.15",
+    "gatsby-plugin-react-helmet": "^1.0.8",
+    "lost": "^8.2.0"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "main": "n/a",
+  "scripts": {
+    "build": "./node_modules/.bin/gatsby build",
+    "develop": "./node_modules/.bin/gatsby develop",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {}
+}

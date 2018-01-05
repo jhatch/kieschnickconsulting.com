@@ -1,0 +1,20 @@
+.display-image {
+  img {
+    margin-bottom: 0;
+  }
+
+  figcaption {
+    font-size: 9px;
+    line-height: normal;
+
+    label:first-child {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    label:nth-child(2) {
+      margin-right: 10px
+    }
+  }
+}

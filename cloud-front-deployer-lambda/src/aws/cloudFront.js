@@ -8,9 +8,9 @@ const cloudFront = new CloudFront({
 });
 
 const distributionIds = {
-  dev: 'E1Q6UAE47JIA1J',
-  staging: 'E107TEOYTSVTCY',
-  prod: 'E1IRXV8VRR8TCH'
+  dev: process.env.DISTRIBUTION_DEV,
+  staging: process.env.DISTRIBUTION_STAGING,
+  prod: process.env.DISTRIBUTION_PROD
 };
 
 const envs = Object.keys(distributionIds);

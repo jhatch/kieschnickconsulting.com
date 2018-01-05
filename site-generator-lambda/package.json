@@ -19,6 +19,10 @@
   "homepage": "https://github.com/jhatch/kieschnickconsulting.com#readme",
   "dependencies": {
     "aws-sdk": "2.176.x",
-    "contentful": "^5.0.5"
+    "contentful": "5.0.x",
+    "gatsby-cli": "1.1.x"
+  },
+  "devDependencies": {
+    
   }
 }
