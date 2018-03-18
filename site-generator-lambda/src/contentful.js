@@ -7,6 +7,7 @@ module.exports = {
   getContent: content => {
     let rProm;
 
+    console.log("Fetching content from Contentful.");
     switch (content) {
       case 'preview':
         rProm = kms.decrypt(process.env.CONTENTFUL_PREVIEW_API_KEY)

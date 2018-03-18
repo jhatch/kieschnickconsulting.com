@@ -4,6 +4,7 @@ const exec = require('child_process').exec;
 
 module.exports = {
   generate: (buildName, content) => {
+    console.log("Generating gatsby site.");
     return new Promise((resolve, reject) => {
       exec('cp -r ./gatsby-static-site /tmp/gatsby-static-site && cd /tmp/gatsby-static-site && ./node_modules/.bin/gatsby build', err => {
         if (err) {

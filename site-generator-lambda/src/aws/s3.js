@@ -12,11 +12,15 @@ const s3 = new S3({
 
 module.exports = {
   upload: (buildName, publicDir) => {
+    console.log("Upload files to S3.");
     return new Promise((resolve, reject) => {
+      console.log("Reading files from " + publicDir);
       const files = fs.readdirSync(publicDir);
       
-      async.map(files, function (f, cb) {
+      async.map(files.filter(file => file.includes(".")), function (f, cb) {
         const filePath = path.join(publicDir, f);
+
+        console.log("Pushing file " + filePath, f);
         const options = {
           Bucket: process.env.S3_BUCKET,
           Key: buildName,
