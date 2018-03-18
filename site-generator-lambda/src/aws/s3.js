@@ -1,5 +1,8 @@
 'use strict';
 
+const async = require('async');
+const fs = require('fs');
+const path = require('path');
 const S3 = require('aws-sdk/clients/s3');
  
 const s3 = new S3({
@@ -8,20 +11,24 @@ const s3 = new S3({
 });
 
 module.exports = {
-  upload: (buildName, html) => {
+  upload: (buildName, publicDir) => {
     return new Promise((resolve, reject) => {
-      const params = {
-        Body: Buffer.from(html, 'utf8'), 
-        Bucket: process.env.S3_BUCKET, 
-        Key: `${buildName}/index.html`, 
-        ContentType: 'text/html'
-      };
+      const files = fs.readdirSync(publicDir);
+      
+      async.map(files, function (f, cb) {
+        const filePath = path.join(publicDir, f);
+        const options = {
+          Bucket: process.env.S3_BUCKET,
+          Key: buildName,
+          Body: fs.readFileSync(filePath)
+        };
 
-      s3.putObject(params, (err, data) => {
+        S3.putObject(options, cb);
+      }, err => {
         if (err) {
           reject(err);
         } else {
-          resolve(buildName);
+          resolve();
         }
       });
     });

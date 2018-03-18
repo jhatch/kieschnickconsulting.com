@@ -18,11 +18,11 @@
   },
   "homepage": "https://github.com/jhatch/kieschnickconsulting.com#readme",
   "dependencies": {
+    "async": "^2.6.0",
     "aws-sdk": "2.176.x",
-    "contentful": "5.0.x",
+    "contentful": "5.x",
+    "exec": "^0.2.1",
     "gatsby-cli": "1.1.x"
   },
-  "devDependencies": {
-    
-  }
+  "devDependencies": {}
 }

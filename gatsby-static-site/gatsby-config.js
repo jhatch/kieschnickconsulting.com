@@ -1,4 +1,3 @@
-const lost = require(`lost`)
 
 module.exports = {
   siteMetadata: {
@@ -7,10 +6,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-plugin-postcss-sass`,
-      options: {
-        postCssPlugins: [lost()],
-      },
+      resolve: `gatsby-plugin-postcss-sass`
     },
     {
       resolve: `gatsby-plugin-google-analytics`,

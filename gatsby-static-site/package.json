@@ -4,12 +4,12 @@
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "gatsby": "^1.9.145",
-    "gatsby-link": "^1.6.32",
-    "gatsby-plugin-google-analytics": "^1.0.15",
-    "gatsby-plugin-postcss-sass": "^1.0.15",
-    "gatsby-plugin-react-helmet": "^1.0.8",
-    "lost": "^8.2.0"
+    "gatsby": "1.9.x",
+    "gatsby-cli": "1.1.x",
+    "gatsby-link": "1.6.x",
+    "gatsby-plugin-google-analytics": "1.0.x",
+    "gatsby-plugin-postcss-sass": "1.0.x",
+    "gatsby-plugin-react-helmet": "1.0.x"
   },
   "keywords": [
     "gatsby"
