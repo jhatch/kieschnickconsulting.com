@@ -10,6 +10,33 @@ const s3 = new S3({
   region: process.env.AWS_REGION
 });
 
+const file2contentType = file => {
+  let contentType;
+
+  switch (file.substr(file.lastIndexOf(".") + 1)) {
+    case "html":
+      contentType = 'text/html';
+      break;
+    case "js":
+      contentType = 'application/javascript';
+      break;
+    case "jpg":
+      contentType = 'image/jpeg';
+      break;
+    case "css":
+      contentType = 'text/css';
+      break;
+    case "json":
+      contentType = 'application/json';
+      break;
+    default:
+      contentType = 'application/octet-stream';
+      break;
+  }
+
+  return contentType;
+}
+
 module.exports = {
   upload: (buildName, publicDir) => {
     console.log("Upload files to S3.");
@@ -20,14 +47,15 @@ module.exports = {
       async.map(files.filter(file => file.includes(".")), function (f, cb) {
         const filePath = path.join(publicDir, f);
 
-        console.log("Pushing file " + filePath, f);
+        console.log("Reading file " + filePath, f);
         const options = {
           Bucket: process.env.S3_BUCKET,
-          Key: buildName,
-          Body: fs.readFileSync(filePath)
+          Key: buildName + "/" + f,
+          Body: fs.readFileSync(filePath),
+          ContentType: file2contentType(filePath)
         };
 
-        S3.putObject(options, cb);
+        s3.putObject(options, cb);
       }, err => {
         if (err) {
           reject(err);

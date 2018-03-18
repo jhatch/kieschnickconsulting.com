@@ -9,6 +9,7 @@ const lambda = new Lambda({
 
 module.exports = {
   invokeCloudFrontDeployer: (env, buildName) => {
+    console.log("Invoking cloudfront deployer.");
     return new Promise((resolve, reject) => {
       lambda.invoke({
         InvocationType: 'Event',
